@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+<title>Dobro dosli u AutoKucu</title>
+</head>
+<body>
+<div class="container">
+
+<br><br><br><br>
+			<header>
+				<h1><span>AUTO KUCA</span>			
+				Boris Zaharic
+				</h1>
+            </header>  
+<div  class="form">
+<form id="contactform" method="post" action="../AutoKuca/LoginServlet" class="login">
+    <p class="contact">
+      <label for="username">Username:</label>
+      
+    </p>
+    <input id="username" type="text" name="username" value="">
+
+    <p class="contact">
+      <label for="password">Password:</label>
+      
+    </p>
+    <input id="password" type="password" name="password" value="">
+
+    <input type="submit" value="Ulogujte se!">
+	<br>
+	<div align="center">${poruka}</div><br>
+  </form>
+  </div>
+  
+  
+ 
+ </div>
+</body>
+<script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1649281665320108',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use version 2.2
+  });	
+  }
+  alert(FB)
+  </script>
+</html>

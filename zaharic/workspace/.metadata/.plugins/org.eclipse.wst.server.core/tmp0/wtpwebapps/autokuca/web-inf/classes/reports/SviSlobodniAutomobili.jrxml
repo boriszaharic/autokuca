@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SviSlobodniAutomobili" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a034465e-9eb7-425a-a235-dbc325d5b8b6">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" hAlign="Center" vAlign="Middle" fontSize="12"/>
+	<style name="table_cell" hAlign="Center" vAlign="Middle" fontSize="11">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<style name="style2" hAlign="Center" vAlign="Middle" fontSize="13"/>
+	<style name="table_header" mode="Opaque" forecolor="#000000" backcolor="#66CCFF" fill="Solid" hAlign="Center" vAlign="Middle" fontSize="13">
+		<box>
+			<pen lineWidth="0.5"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<field name="boja" class="java.lang.String"/>
+	<field name="idvozila" class="java.lang.Integer"/>
+	<field name="model" class="java.lang.String"/>
+	<field name="cena" class="java.lang.Integer"/>
+	<field name="kategorija.nazivkategorije" class="java.lang.String"/>
+	<field name="marka" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="6ba0b091-6ada-4888-aff4-b24f83686175" style="style2" x="101" y="12" width="357" height="41"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Svi Slobodni Automobili]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="7f05bff2-3f5b-49be-aedd-03d16bc4a87a" style="table_header" x="209" y="1" width="100" height="27"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Marka:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="89cc7a73-84f4-40ba-a316-61667cc609e7" style="table_header" x="309" y="1" width="82" height="27"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Model:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ec146672-b576-45a6-a9b4-db47ae6099df" style="table_header" x="473" y="1" width="82" height="27"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Cena:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79815399-3339-4149-8c86-ab31086671aa" style="table_header" x="391" y="1" width="82" height="27"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Boja:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1eb4d712-1be6-404a-89dd-8a5c422a8fdb" style="table_header" x="0" y="1" width="79" height="27"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Vozilo Id:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e8c6662a-765a-4d4f-a16d-5fc99aaa8dc5" style="table_header" x="79" y="1" width="130" height="27"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Kategorija:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="eae7027d-55d6-4247-8949-229b6488582c" style="table_cell" x="209" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marka}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8a4b6cae-0d9d-4f23-be84-3fdc81b0f7ea" style="table_cell" x="309" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{model}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="08eab01b-1c30-48e3-adaf-84110d632eb1" style="table_cell" x="391" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{boja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="45c1e435-322f-4dfc-ad9e-d48b86f97e49" style="table_cell" x="473" y="0" width="82" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cena}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f831c26-fd7a-4672-bc12-60e42437c339" style="table_cell" x="79" y="0" width="130" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kategorija.nazivkategorije}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40a0ecce-faab-4a97-b5db-254c4d32ea21" style="table_cell" x="0" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idvozila}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="22" splitType="Stretch"/>
+	</summary>
+</jasperReport>

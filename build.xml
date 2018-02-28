@@ -1,0 +1,67 @@
+<project name="AutoKuca" basedir="." default="deploy">
+	
+<property file="ant.properties"/>
+<property name="src" location="src"/>
+<property name="bin" location="bin" />
+<property name="libs" value="libs" />
+<property name="dist" value="dist" />
+<property name="webContent" location="WebContent" />
+	
+<path id="compile.classpath">
+	<fileset dir="${libs}" includes="*.jar"/>
+	<fileset dir="${tomcat.dir}/lib" includes="*.jar" />
+</path>	
+	
+<target name="clean">
+ <delete dir="${bin}"/>
+ <delete dir="${dist}" />
+ <delete file="${tomcat.dir}/webapps/AutoKuca.war"/> 
+ <delete dir="${tomcat.dir}/webapps/AutoKuca"/> 
+
+</target>
+	
+<target name="createdir" depends="clean">
+	<mkdir dir="${bin}"/>
+	<mkdir dir="${dist}"/>
+</target>
+
+<target name="compile" depends="createdir">
+	<javac srcdir="${src}" destdir="${bin}" classpathref="compile.classpath"/>
+	<copy todir="${bin}"> 
+		<fileset dir="${src}" includes="**/*.xml"/>
+		<fileset dir="${src}" includes="**/*.jrxml"/>
+		<fileset dir="${src}" includes="**/*.jasper"/>
+	</copy>
+
+</target>
+	
+<target name="AutoKuca.war" depends="compile">
+	<war destfile="${dist}/AutoKuca.war" needxmlfile="false">
+		<zipfileset dir="${webContent}">
+			<include name="**/*.jsp"/>
+			<include name="**/*.html"/>	
+			<include name="**/*.css"/>	
+			<include name="**/*.png"/>	
+			<include name="**/*.scss"/>	
+		</zipfileset>
+		<classes dir="${bin}">
+			<include name="**/*.class"/>
+			<include name="**/*.xml"/>	
+			<include name="**/*.jrxml"/>
+			<include name="**/*.jasper"/> 
+		</classes>
+		<lib dir="${libs}"> 
+			<include name="*.jar"/> 
+		</lib>	
+	</war>
+</target>
+	
+
+	<target name="deploy" depends="AutoKuca.war">
+		<copy todir="${tomcat.dir}/webapps"> 
+			<fileset dir="${dist}" includes="AutoKuca.war"/> 
+		</copy>		
+	</target>
+	
+	
+</project>

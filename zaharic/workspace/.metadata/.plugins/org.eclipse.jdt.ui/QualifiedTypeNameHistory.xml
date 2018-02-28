@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.restfb.FacebookClient"/>
+<fullyQualifiedTypeName name="com.restfb.DefaultFacebookClient"/>
+<fullyQualifiedTypeName name="com.restfb.types.User"/>
+<fullyQualifiedTypeName name="dbmodel.Prodavac"/>
+<fullyQualifiedTypeName name="managers.ProdavacManager"/>
+</qualifiedTypeNameHistroy>

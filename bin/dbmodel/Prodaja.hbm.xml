@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 27, 2014 10:29:38 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dbmodel.Prodaja" table="prodaja" catalog="autokuca">
+        <id name="idprodaje" type="java.lang.Integer">
+            <column name="IDPRODAJE" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="vozilo" class="dbmodel.Vozilo" fetch="select" lazy="false">
+            <column name="IDVOZILA" not-null="true" />
+        </many-to-one>
+        <many-to-one name="prodavac" class="dbmodel.Prodavac" fetch="select" lazy="false">
+            <column name="IDPRODAVCA" not-null="true" />
+        </many-to-one>
+        <property name="datum" type="timestamp">
+            <column name="DATUM" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

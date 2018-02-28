@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE>
+<%@ page import="dbmodel.Prodavac" %>
+<html>
+<head>
+<meta http-equiv="Content-Type" charset="ANSI">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<link rel="stylesheet" type="text/css" href="/AutoKuca/style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/AutoKuca/demo.css" media="all" />
+<title>Auto Kuca</title>
+</head>
+<body>
+
+<div class="container">
+
+<br><br><br><br>
+			<header>
+				<h1><span>AUTO KUCA</span>			
+				Boris Zaharic
+				</h1>
+            </header>  
+<br><br><br>
+<div  class="form">
+<div align="center" id="poruka">
+<p> Ulogovali ste se kao <%= ((Prodavac)session.getAttribute("prodavac")).getUsername() %></p>
+	<a href="/AutoKuca/LogoutServlet">Logout.</a>
+
+${poruka}</div>
+
+<br>
+<p> <span>Meni</span> </p>
+
+<div><a href="/AutoKuca/JSPStranice/DodajAutomobil.jsp">Dodaj novi automobil!</a></div>
+<div><a href="/AutoKuca/JSPStranice/Automobili.jsp">Pregled automobila!</a></div>
+<br>
+<p>  <span>Izvestaji</span> </p>
+
+<div><a target="_blank" href="/AutoKuca/IzvestajSviProdatiAutomobiliServlet">Svi prodati automobili</a></div>
+<div><a target="_blank" href="/AutoKuca/IzvestajSviSlobodniAutomobiliServlet">Svi slobodni automobili</a></div>
+<div><a target="_blank" href="/AutoKuca/IzvestajSveProdajeServlet">Detalji o prodajama</a></div>
+<br><br><br>
+</div>
+<br><br>
+</div>
+</body>
+</html>

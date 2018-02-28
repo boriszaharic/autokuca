@@ -1,0 +1,5 @@
+INDEX VERSION 1.127
+D:\Zaharic\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1711130211.index
+\AutoKuca\src
+D:\Zaharic\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2103793851.index
+\AutoKuca\src

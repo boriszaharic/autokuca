@@ -1,0 +1,55 @@
+package managers;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+
+import dbmodel.Kategorija;
+import dbmodel.Vozilo;
+
+public class KategorijaManager {
+	
+	
+	
+	public static Kategorija getKategorijaById(int id) {
+
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Kategorija kat = (Kategorija) session.get(Kategorija.class, id);
+		session.getTransaction().commit();
+		return kat;
+	}
+	
+	
+	
+	
+	public static int snimiKategoriju(String naziv) {
+		try {
+			Session session = HibernateUtil.getSessionFactory()
+					.getCurrentSession();
+			session.beginTransaction();
+			
+			Set<Vozilo> vozila = new HashSet<Vozilo>(0);
+
+			Kategorija k = new Kategorija(naziv, vozila);
+
+			int id = (Integer) session.save(k);
+			System.out.println("Snimili smo kategoriju sa rednim brojem: " + id);
+			session.getTransaction().commit();
+			return id;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
+	
+	public static void main(String args []) {
+		
+		// za testiranje 
+		int id = snimiKategoriju("Kabriolet");
+		System.out.println(id);
+		
+	}
+}

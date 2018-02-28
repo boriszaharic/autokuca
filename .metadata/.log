@@ -1,0 +1,20 @@
+!SESSION 2002-01-01 01:15:47.549 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.update.configurator 4 0 2002-01-01 01:19:03.120
+!MESSAGE Unable to find feature.xml in directory: H:\eclipse\features\org.tigris.subversion.subclipse_1.0.6.jar
+!SESSION 2014-06-23 18:27:22.704 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.7.0_55
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.update.configurator 4 0 2014-06-23 18:28:24.876
+!MESSAGE Unable to find feature.xml in directory: H:\eclipse\features\org.tigris.subversion.subclipse_1.0.6.jar

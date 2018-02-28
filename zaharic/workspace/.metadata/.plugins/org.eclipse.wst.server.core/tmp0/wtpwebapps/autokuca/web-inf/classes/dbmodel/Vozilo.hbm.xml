@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 27, 2014 10:29:38 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="dbmodel.Vozilo" table="BZVOZILO" catalog="autokuca">
+        <id name="idvozila" type="java.lang.Integer">
+            <column name="IDVOZILA" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="kategorija" class="dbmodel.Kategorija" lazy="false" fetch="select">
+            <column name="IDKATEGORIJE" not-null="true" />
+        </many-to-one>
+        <property name="marka" type="string">
+            <column name="MARKA" length="254" />
+        </property>
+        <property name="model" type="string">
+            <column name="MODEL" length="254" />
+        </property>
+        <property name="cena" type="java.lang.Integer">
+            <column name="CENA" />
+        </property>
+        <property name="godinaproizvodnje" type="java.lang.Integer">
+            <column name="GODINAPROIZVODNJE" />
+        </property>
+        <property name="boja" type="string">
+            <column name="BOJA" length="254" />
+        </property>
+        <set name="prodajas" table="BZPRODAJA" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="IDVOZILA" not-null="true" />
+            </key>
+            <one-to-many class="dbmodel.Prodaja" />
+        </set>
+    </class>
+</hibernate-mapping>
